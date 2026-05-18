@@ -24,7 +24,10 @@ define('DB_CHARSET', $env['db_charset'] ?? 'utf8mb4');
 // Site
 define('SITE_NAME', $env['site_name'] ?? 'Zionite Charity');
 define('SITE_URL', rtrim($env['site_url'] ?? '', '/'));
-define('ADMIN_EMAIL', $env['admin_email'] ?? 'admin@zionitecharity.org');
+define('ADMIN_EMAIL', $env['admin_email'] ?? 'Charityzionite@gmail.com');
+define('SITE_CONTACT_ADDRESS', $env['contact_address'] ?? 'Morphou, Guzerlyurt, North Cyprus');
+define('SITE_CONTACT_PHONE', $env['contact_phone'] ?? '+905338326112');
+define('SITE_CONTACT_EMAIL', $env['contact_email'] ?? 'Charityzionite@gmail.com');
 
 // Payments
 define('STRIPE_SECRET_KEY', $env['stripe_secret_key'] ?? '');

@@ -49,15 +49,15 @@
                     <ul class="footer-contact">
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>123 Charity Street, Humanitarian City, HC 12345</span>
+                            <span><?php echo htmlspecialchars(SITE_CONTACT_ADDRESS); ?></span>
                         </li>
                         <li>
                             <i class="fas fa-phone"></i>
-                            <span>+1 (555) 123-4567</span>
+                            <a href="tel:<?php echo preg_replace('/\s+/', '', SITE_CONTACT_PHONE); ?>"><?php echo htmlspecialchars(SITE_CONTACT_PHONE); ?></a>
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <span>info@zionitecharity.org</span>
+                            <a href="mailto:<?php echo htmlspecialchars(SITE_CONTACT_EMAIL); ?>"><?php echo htmlspecialchars(SITE_CONTACT_EMAIL); ?></a>
                         </li>
                     </ul>
                 </div>

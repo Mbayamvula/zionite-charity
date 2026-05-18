@@ -20,7 +20,10 @@ return [
     // Site — must match your live URL with https://
     'site_name' => 'Zionite Charity',
     'site_url' => 'https://www.yourdomain.com',
-    'admin_email' => 'admin@yourdomain.com',
+    'admin_email' => 'Charityzionite@gmail.com',
+    'contact_address' => 'Morphou, Guzerlyurt, North Cyprus',
+    'contact_phone' => '+905338326112',
+    'contact_email' => 'Charityzionite@gmail.com',
 
     // Security — generate a long random string
     'security_maintenance_token' => 'CHANGE-TO-RANDOM-64-CHAR-STRING',
@@ -42,7 +45,7 @@ return [
     'bank_iban' => '',
     'bank_swift' => '',
 
-    'cash_instructions' => 'Cash donations can be made in person at [your address]. Office hours: Monday–Friday, 9:00 AM – 5:00 PM.',
+    'cash_instructions' => 'Cash donations can be made in person at Morphou, Guzerlyurt, North Cyprus. Office hours: Monday–Friday, 9:00 AM – 5:00 PM.',
 
     'donation_currency' => 'usd',
     'donation_currency_symbol' => '$',

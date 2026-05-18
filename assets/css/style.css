@@ -1057,6 +1057,15 @@ ul {
     margin-top: 5px;
 }
 
+.footer-contact a {
+    color: var(--gray-300);
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    color: var(--accent-gold);
+}
+
 .footer-bottom {
     display: flex;
     justify-content: space-between;

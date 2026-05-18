@@ -130,7 +130,7 @@ include 'includes/header.php';
                             <i class="fas fa-map-marker-alt" style="color: var(--accent-gold); font-size: 1.25rem; margin-top: 5px;"></i>
                             <div>
                                 <h4 style="color: var(--white); margin-bottom: 5px;">Address</h4>
-                                <p style="color: var(--gray-200);">123 Charity Street<br>Humanitarian City, HC 12345</p>
+                                <p style="color: var(--gray-200);"><?php echo nl2br(htmlspecialchars(SITE_CONTACT_ADDRESS)); ?></p>
                             </div>
                         </div>
                     </div>
@@ -140,7 +140,7 @@ include 'includes/header.php';
                             <i class="fas fa-phone" style="color: var(--accent-gold); font-size: 1.25rem; margin-top: 5px;"></i>
                             <div>
                                 <h4 style="color: var(--white); margin-bottom: 5px;">Phone</h4>
-                                <p style="color: var(--gray-200);">+1 (555) 123-4567</p>
+                                <p style="color: var(--gray-200);"><a href="tel:<?php echo preg_replace('/\s+/', '', SITE_CONTACT_PHONE); ?>" style="color: inherit;"><?php echo htmlspecialchars(SITE_CONTACT_PHONE); ?></a></p>
                             </div>
                         </div>
                     </div>
@@ -150,7 +150,7 @@ include 'includes/header.php';
                             <i class="fas fa-envelope" style="color: var(--accent-gold); font-size: 1.25rem; margin-top: 5px;"></i>
                             <div>
                                 <h4 style="color: var(--white); margin-bottom: 5px;">Email</h4>
-                                <p style="color: var(--gray-200);">info@zionitecharity.org</p>
+                                <p style="color: var(--gray-200);"><a href="mailto:<?php echo htmlspecialchars(SITE_CONTACT_EMAIL); ?>" style="color: inherit;"><?php echo htmlspecialchars(SITE_CONTACT_EMAIL); ?></a></p>
                             </div>
                         </div>
                     </div>
