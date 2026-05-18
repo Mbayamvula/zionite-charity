@@ -1,0 +1,24 @@
+# Secrets — never commit
+includes/env.php
+
+# Security logs and blocked IPs
+storage/security/*
+!storage/security/.htaccess
+
+# Uploads (user content)
+uploads/projects/*
+uploads/reports/*
+!uploads/projects/.htaccess
+!uploads/reports/.htaccess
+!uploads/.htaccess
+
+# Deployment build artifacts
+deploy-package/
+zionite-charity-deploy.zip
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

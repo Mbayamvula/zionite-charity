@@ -1,0 +1,67 @@
+================================================================================
+ZIONITE CHARITY — DEPLOYMENT GUIDE
+================================================================================
+
+STEP 1 — UPLOAD FILES
+  Upload all project files to your hosting (public_html or www folder).
+
+STEP 2 — CREATE DATABASE
+  In cPanel/phpMyAdmin:
+  - Create MySQL database + user with ALL privileges on that database
+  - Import: database/schema.sql
+  - Import: database/payment_migration.sql (if donations lack payment columns)
+  - Import: database/security_schema.sql (optional — auto-created by the app)
+
+STEP 3 — CONFIGURE ENVIRONMENT
+  On the server:
+  - Copy includes/env.example.php to includes/env.php?
+  - Edit includes/env.php:
+
+    app_env          => 'production'
+    db_host          => (usually localhost)
+    db_name          => your hosting database name
+    db_user          => your hosting database user
+    db_pass          => your strong database password
+    site_url         => https://www.YOUR-DOMAIN.com  (no trailing slash)
+    security_maintenance_token => long random string (64+ chars)
+
+STEP 4 — HTTPS
+  Enable SSL certificate (Let's Encrypt) on your host.
+  site_url MUST start with https://
+
+STEP 5 — PAYMENTS (optional)
+  In includes/env.php:
+  - stripe_secret_key / stripe_publishable_key (live keys from stripe.com)
+  - paypal_client_id / paypal_client_secret
+  - paypal_mode => 'live'
+  - Update bank_* and cash_instructions with real details
+
+STEP 6 — FOLDER PERMISSIONS
+  Ensure writable (chmod 755 or 775):
+  - uploads/projects/
+  - uploads/reports/
+  - storage/security/
+
+STEP 7 — ADMIN PASSWORD
+  DO NOT use admin123 in production.
+  After deploy, run ONCE (with token):
+    https://YOUR-DOMAIN.com/reset_admin.php?token=YOUR_MAINTENANCE_TOKEN
+  Then delete or block reset_admin.php and test_db.php via .htaccess.
+
+STEP 8 — VERIFY
+  [ ] Homepage loads with HTTPS
+  [ ] Contact form works
+  [ ] Donation form works (bank transfer at minimum)
+  [ ] Admin login works with new password
+  [ ] Admin > AI Security shows no false blocks on your IP
+
+STEP 9 — SECURITY CHECKLIST
+  [ ] includes/env.php is NOT publicly downloadable
+  [ ] APP_ENV = production
+  [ ] Default admin123 password changed
+  [ ] reset_admin.php blocked or removed after use
+  [ ] test_db.php blocked or removed after use
+
+================================================================================
+SUPPORT: Admin panel > AI Security — view blocked IPs and threats
+================================================================================
