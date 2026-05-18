@@ -8,6 +8,20 @@ Humanitarian charity website built with PHP and MySQL.
 - MySQL 5.7+ / MariaDB
 - Apache with `mod_rewrite` (optional)
 
+## GitHub
+
+Repository: **https://github.com/Mbayamvula/zionite-charity**
+
+To push updates:
+```powershell
+cd "c:\laragon\www\Zionite charity"
+git add -A
+git commit -m "Your message"
+git push
+```
+
+First-time setup: run `scripts/push-to-github.ps1` or connect with `gh auth login`.
+
 ## Local setup (Laragon)
 
 1. Clone this repository into `www/`
